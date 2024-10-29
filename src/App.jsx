@@ -1,11 +1,15 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import UrlProvider from "./context";
+
 import AppLayout from "./layouts/app-layout";
-import Landing from "./pages/Landing";
-import Dashboard from "./pages/Dashboard";
-import Auth from "./pages/Auth";
-import Link from "./pages/Link";
+import RequireAuth from "./components/require-auth";
+
 import RedirectLink from "./pages/redirect-link";
+import LandingPage from "./pages/landing";
+import Dashboard from "./pages/dashboard";
+import LinkPage from "./pages/link";
+import Auth from "./pages/auth";
 
 const router = createBrowserRouter([
   {
@@ -13,19 +17,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Landing />,
-      },
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
+        element: <LandingPage />,
       },
       {
         path: "/auth",
         element: <Auth />,
       },
       {
+        path: "/dashboard",
+        element: (
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/link/:id",
-        element: <Link />,
+        element: (
+          <RequireAuth>
+            <LinkPage />
+          </RequireAuth>
+        ),
       },
       {
         path: "/:id",
@@ -35,8 +47,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App = () => {
-  return <RouterProvider router={router} />;
+function App() {
+  return (
+    <UrlProvider>
+      <RouterProvider router={router} />
+    </UrlProvider>
+  );
 }
 
 export default App;
