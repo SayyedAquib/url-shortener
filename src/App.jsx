@@ -1,15 +1,15 @@
-import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import UrlProvider from "./context";
+import "./App.css";
+import UrlProvider from "./Context";
 
-import AppLayout from "./layouts/app-layout";
 import RequireAuth from "./components/require-auth";
+import AppLayout from "./layouts/app-layout";
 
-import RedirectLink from "./pages/redirect-link";
-import LandingPage from "./pages/landing";
-import Dashboard from "./pages/dashboard";
-import LinkPage from "./pages/link";
 import Auth from "./pages/auth";
+import Dashboard from "./pages/dashboard";
+import LandingPage from "./pages/landing";
+import LinkPage from "./pages/link";
+import RedirectLink from "./pages/redirect-link";
 
 const router = createBrowserRouter([
   {

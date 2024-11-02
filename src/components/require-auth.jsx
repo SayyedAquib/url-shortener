@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import { useNavigate } from "react-router-dom";
+import { UrlState } from "@/Context";
 import { useEffect } from "react";
-import { UrlState } from "@/context";
+import { useNavigate } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 
 function RequireAuth({ children }) {
