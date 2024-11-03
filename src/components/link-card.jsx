@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { deleteUrl } from "@/db/apiUrls";
-import useFetch from "@/hooks/useFetch";
 import { Copy, Download, LinkIcon, Trash } from "lucide-react";
 import { Link } from "react-router-dom";
-import { BeatLoader } from "react-spinners";
 import { Button } from "./ui/button";
+import useFetch from "@/hooks/use-fetch";
+import { deleteUrl } from "@/db/apiUrls";
+import { BeatLoader } from "react-spinners";
 
 const LinkCard = ({ url = [], fetchUrls }) => {
   const downloadImage = () => {

@@ -2,23 +2,22 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { UrlState } from "@/Context";
-import { createUrl } from "@/db/apiUrls";
-import useFetch from "@/hooks/useFetch";
-import { useEffect, useRef, useState } from "react";
-import { QRCode } from "react-qrcode-logo";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { BeatLoader } from "react-spinners";
-import * as yup from "yup";
-import Error from "./Error.jsx";
 import { Card } from "./ui/card";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import Error from "./error";
+import * as yup from "yup";
+import useFetch from "@/hooks/use-fetch";
+import { createUrl } from "@/db/apiUrls";
+import { BeatLoader } from "react-spinners";
+import { UrlState } from "@/context";
+import { QRCode } from "react-qrcode-logo";
 
 export function CreateLink() {
   const { user } = UrlState();
@@ -99,9 +98,6 @@ export function CreateLink() {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="font-bold text-2xl">Create New</DialogTitle>
-          <DialogDescription>
-            Provide the details for your new link below.
-          </DialogDescription>
         </DialogHeader>
         {formValues?.longUrl && (
           <QRCode ref={ref} size={250} value={formValues?.longUrl} />

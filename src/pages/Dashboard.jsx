@@ -1,20 +1,20 @@
 // can add sonner from shadcn ui after link created
 
-import { Filter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BarLoader } from "react-spinners";
+import { Filter } from "lucide-react";
 
-import { CreateLink } from "@/components/CreateLink";
-import Error from "@/components/Error";
-import LinkCard from "@/components/LinkCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { CreateLink } from "@/components/create-link";
+import LinkCard from "@/components/link-card";
+import Error from "@/components/error";
 
-import useFetch from "@/hooks/useFetch";
+import useFetch from "@/hooks/use-fetch";
 
-import { UrlState } from "@/Context";
-import { getClicksForUrls } from "@/db/apiClicks";
 import { getUrls } from "@/db/apiUrls";
+import { getClicksForUrls } from "@/db/apiClicks";
+import { UrlState } from "@/context";
 
 const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
