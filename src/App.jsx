@@ -1,5 +1,5 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import UrlProvider from "@/context";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RequireAuth from "./components/require-auth";
 import AppLayout from "./layouts/app-layout";
 import Auth from "./pages/auth";
