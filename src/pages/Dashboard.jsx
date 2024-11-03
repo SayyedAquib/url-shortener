@@ -4,13 +4,13 @@ import { Filter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BarLoader } from "react-spinners";
 
-import { CreateLink } from "@/components/create-link";
-import Error from "@/components/error";
-import LinkCard from "@/components/link-card";
+import { CreateLink } from "@/components/CreateLink";
+import Error from "@/components/Error";
+import LinkCard from "@/components/LinkCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
-import useFetch from "@/hooks/use-fetch";
+import useFetch from "@/hooks/useFetch";
 
 import { UrlState } from "@/Context";
 import { getClicksForUrls } from "@/db/apiClicks";

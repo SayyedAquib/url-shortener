@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { UrlState } from "@/Context";
 import { logout } from "@/db/apiAuth";
-import useFetch from "@/hooks/use-fetch";
+import useFetch from "@/hooks/useFetch";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { LinkIcon, LogOut } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
