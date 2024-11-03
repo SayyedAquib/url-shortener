@@ -5,6 +5,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -98,7 +99,11 @@ export function CreateLink() {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="font-bold text-2xl">Create New</DialogTitle>
+          <DialogDescription>
+            Provide the details for your new link below.
+          </DialogDescription>
         </DialogHeader>
+
         {formValues?.longUrl && (
           <QRCode ref={ref} size={250} value={formValues?.longUrl} />
         )}
