@@ -17,7 +17,7 @@ import { QRCode } from "react-qrcode-logo";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import * as yup from "yup";
-import Error from "./Error";
+import Error from "./Error.jsx";
 import { Card } from "./ui/card";
 
 export function CreateLink() {
