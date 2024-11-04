@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import UrlProvider from "./context";
 
 import AppLayout from "./layouts/app-layout";
 import RequireAuth from "./components/require-auth";
@@ -9,6 +8,7 @@ import LandingPage from "./pages/landing";
 import Dashboard from "./pages/dashboard";
 import LinkPage from "./pages/link";
 import Auth from "./pages/auth";
+import UrlProvider from "./context";
 
 const router = createBrowserRouter([
   {
