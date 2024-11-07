@@ -6,7 +6,7 @@ import RequireAuth from "./components/require-auth";
 import RedirectLink from "./pages/redirect-link";
 import LandingPage from "./pages/landing";
 import LinkPage from "./pages/link";
-import UrlProvider from "./context";
+import UrlProvider from "./Context";
 import Dashboard from "./pages/dashboard";
 import Auth from "./pages/auth";
 
