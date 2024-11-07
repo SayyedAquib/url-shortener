@@ -7,8 +7,8 @@ import RedirectLink from "./pages/redirect-link";
 import LandingPage from "./pages/landing";
 import LinkPage from "./pages/link";
 import UrlProvider from "./Context";
-import Dashboard from "./pages/dashboard";
-import Auth from "./pages/auth";
+import Dashboard from "./pages/Dashboard";
+import Auth from "./pages/Auth";
 
 const router = createBrowserRouter([
   {
