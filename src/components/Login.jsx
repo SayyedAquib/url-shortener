@@ -1,4 +1,4 @@
-import { UrlState } from "@/context";
+import { UrlState } from "@/Context";
 import { login } from "@/db/apiAuth";
 import useFetch from "@/hooks/use-fetch";
 import { useEffect, useState } from "react";
