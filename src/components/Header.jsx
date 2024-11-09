@@ -6,7 +6,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { UrlState } from "@/context";
+import { UrlState } from "@/Context";
 import { logout } from "@/db/apiAuth";
 import useFetch from "@/hooks/use-fetch";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
