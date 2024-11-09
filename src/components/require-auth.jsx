@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { UrlState } from "@/context";
+import { UrlState } from "@/Context";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BarLoader } from "react-spinners";
