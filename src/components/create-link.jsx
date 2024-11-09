@@ -9,7 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { UrlState } from "@/context";
+import { UrlState } from "@/Context";
 import { createUrl } from "@/db/apiUrls";
 import useFetch from "@/hooks/use-fetch";
 import { useEffect, useRef, useState } from "react";
