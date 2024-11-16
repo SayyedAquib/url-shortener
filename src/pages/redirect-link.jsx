@@ -17,17 +17,15 @@ const RedirectLink = () => {
 
   useEffect(() => {
     fn();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (!loading && data) {
-      fnStats();  // Store the click
-
-      // Redirect to the original URL
-      window.location.href = data.original_url;
+      fnStats();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading, data]);
+  }, [loading]);
 
   if (loading || loadingStats) {
     return (
