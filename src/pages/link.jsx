@@ -12,6 +12,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BarLoader, BeatLoader } from "react-spinners";
 
 const LinkPage = () => {
+
+  const baseUrl = import.meta.env.VITE_BASE_URL ||
+    (import.meta.env.PROD
+      ? 'https://aquibs-url-shortener.vercel.app'
+      : 'http://localhost:5173');
+
   const downloadImage = () => {
     const imageUrl = url?.qr;
     const fileName = url?.title;
@@ -60,6 +66,7 @@ const LinkPage = () => {
     navigate("/dashboard");
   }
 
+
   let link = "";
   if (url) {
     link = url?.custom_url ? url?.custom_url : url.short_url;
@@ -76,11 +83,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://trimrr.in/${link}`}
+            href={`${baseUrl}/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://trimrr.in/{link}
+            {baseUrl}/{link}
           </a>
           <a
             href={url?.original_url}
@@ -97,7 +104,7 @@ const LinkPage = () => {
             <Button
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`https://trimrr.in/${link}`)
+                navigator.clipboard.writeText(`${baseUrl}/${link}`)
               }
             >
               <Copy />
