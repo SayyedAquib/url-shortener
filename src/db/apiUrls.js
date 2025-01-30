@@ -1,7 +1,6 @@
 import supabase, { supabaseUrl } from "./supabase";
 
 export async function getUrls(user_id) {
-  console.log("All URL")
   let { data, error } = await supabase
     .from("urls")
     .select("*")
@@ -16,7 +15,6 @@ export async function getUrls(user_id) {
 }
 
 export async function getUrl({ id, user_id }) {
-  console.log("Short URL")
   const { data, error } = await supabase
     .from("urls")
     .select("*")
