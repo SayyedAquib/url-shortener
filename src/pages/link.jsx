@@ -1,15 +1,15 @@
 import DeviceStats from "@/components/device-stats";
 import Location from "@/components/location-stats";
-import {Button} from "@/components/ui/button";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
-import {UrlState} from "@/Context";
-import {getClicksForUrl} from "@/db/apiClicks";
-import {deleteUrl, getUrl} from "@/db/apiUrls";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { UrlState } from "@/Context";
+import { getClicksForUrl } from "@/db/apiClicks";
+import { deleteUrl, getUrl } from "@/db/apiUrls";
 import useFetch from "@/hooks/use-fetch";
-import {Copy, Download, LinkIcon, Trash} from "lucide-react";
-import {useEffect} from "react";
-import {useNavigate, useParams} from "react-router-dom";
-import {BarLoader, BeatLoader} from "react-spinners";
+import { Copy, Download, LinkIcon, Trash } from "lucide-react";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { BarLoader, BeatLoader } from "react-spinners";
 
 const LinkPage = () => {
   const downloadImage = () => {
@@ -31,14 +31,14 @@ const LinkPage = () => {
     document.body.removeChild(anchor);
   };
   const navigate = useNavigate();
-  const {user} = UrlState();
-  const {id} = useParams();
+  const { user } = UrlState();
+  const { id } = useParams();
   const {
     loading,
     data: url,
     fn,
     error,
-  } = useFetch(getUrl, {id, user_id: user?.id});
+  } = useFetch(getUrl, { id, user_id: user?.id });
 
   const {
     loading: loadingStats,
@@ -46,7 +46,7 @@ const LinkPage = () => {
     fn: fnStats,
   } = useFetch(getClicksForUrl, id);
 
-  const {loading: loadingDelete, fn: fnDelete} = useFetch(deleteUrl, id);
+  const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, id);
 
   useEffect(() => {
     fn();
@@ -73,33 +73,27 @@ const LinkPage = () => {
       {(loading || loadingStats) && (
         <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />
       )}
-      <div className="flex flex-col gap-8 sm:flex-row mx-5 justify-between">
+      <div className="flex flex-col gap-8 sm:flex-row justify-between">
         <div className="flex flex-col items-start gap-8 rounded-lg sm:w-1/2">
           <span className="text-4xl font-bold hover:underline cursor-pointer">
             Title : {url?.title}
           </span>
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-semibold">Short URL: </span>
-            <a
-              href={`${baseUrl}/${link}`}
-              target="_blank"
-              className="text-2xl sm:text-3xl text-blue-400 font-semibold hover:underline cursor-pointer"
-            >
-              {baseUrl}/{link}
-            </a>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-semibold">Original URL:</span>
-            <a
-              href={url?.original_url}
-              target="_blank"
-              className="flex items-center gap-1 hover:underline cursor-pointer"
-            >
-              <LinkIcon className="p-1" />
-              {url?.original_url}
-            </a>
-          </div>
-
+          <a
+            href={`${baseUrl}/${link}`}
+            target="_blank"
+            className="text-2xl sm:text-3xl text-blue-400 font-semibold hover:underline cursor-pointer"
+          >
+            Short Url : {baseUrl}/{link}
+          </a>
+          <a
+            href={url?.original_url}
+            target="_blank"
+            className="flex items-center gap-1 hover:underline cursor-pointer"
+          >
+            Originial Link :
+            <LinkIcon className="p-1" />
+            {url?.original_url}
+          </a>
           <span className="flex items-end font-medium text-lg">
             Created at : {new Date(url?.created_at).toLocaleString()}
           </span>
