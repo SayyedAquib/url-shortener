@@ -25,8 +25,8 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: "demoaccount@gmail.com",
+    password: "demo@123",
   });
 
   const handleInputChange = (e) => {
@@ -88,6 +88,7 @@ const Login = () => {
             name="email"
             type="email"
             placeholder="Enter Email"
+            value={formData.email} // Bind the value
             onChange={handleInputChange}
           />
         </div>
@@ -97,11 +98,13 @@ const Login = () => {
             name="password"
             type="password"
             placeholder="Enter Password"
+            value={formData.password} // Bind the value
             onChange={handleInputChange}
           />
         </div>
         {errors.password && <Error message={errors.password} />}
       </CardContent>
+
       <CardFooter>
         <Button onClick={handleLogin}>
           {loading ? <BeatLoader size={10} color="#36d7b7" /> : "Login"}
