@@ -73,27 +73,33 @@ const LinkPage = () => {
       {(loading || loadingStats) && (
         <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />
       )}
-      <div className="flex flex-col gap-8 sm:flex-row justify-between">
+      <div className="flex flex-col gap-8 sm:flex-row justify-between mx-4">
         <div className="flex flex-col items-start gap-8 rounded-lg sm:w-1/2">
           <span className="text-4xl font-bold hover:underline cursor-pointer">
             Title : {url?.title}
           </span>
-          <a
-            href={`${baseUrl}/${link}`}
-            target="_blank"
-            className="text-2xl sm:text-3xl text-blue-400 font-semibold hover:underline cursor-pointer"
-          >
-            Short Url : {baseUrl}/{link}
-          </a>
-          <a
-            href={url?.original_url}
-            target="_blank"
-            className="flex items-center gap-1 hover:underline cursor-pointer"
-          >
-            Originial Link :
-            <LinkIcon className="p-1" />
-            {url?.original_url}
-          </a>
+          <div className="flex items-center gap-1 text-2xl sm:text-3xl text-blue-400 font-semibold">
+            <span>Short Url: </span>
+            <a
+              href={`${baseUrl}/${link}`}
+              target="_blank"
+              className="text-2xl sm:text-3xl text-blue-400 font-semibold hover:underline cursor-pointer"
+            >
+              {baseUrl}/{link}
+            </a>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>Originial URL:</span>
+            <a
+              href={url?.original_url}
+              target="_blank"
+              className="flex items-center gap-1 hover:underline cursor-pointer"
+            >
+              <LinkIcon className="p-1" />
+              {url?.original_url}
+            </a>
+          </div>
+
           <span className="flex items-end font-medium text-lg">
             Created at : {new Date(url?.created_at).toLocaleString()}
           </span>

@@ -34,7 +34,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger className="w-10 rounded-full overflow-hidden">
                 <Avatar>
-                  <AvatarImage src={user?.user_metadata?.profile_pic} />
+                  <AvatarImage className="h-10 w-10 object-cover" src={user?.user_metadata?.profile_pic} />
                   <AvatarFallback>PA</AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
